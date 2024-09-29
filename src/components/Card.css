@@ -1,0 +1,81 @@
+.card {
+  position: relative;
+  width: 500px;
+  height: 300px;
+  box-shadow: inset 5px 5px 5px rgba(0,0,0,0.05),
+              inset -5px -5px 5px rgba(255,255,255,0.5),
+              5px 5px 5px rgba(0,0,0,0.05),
+              -5px -5px 5px rgba(255,255,255,0.5);
+  border-radius: 15px;
+  margin: 30px;
+  overflow: hidden; /* Ensure the image and text don't overflow the card */
+}
+
+.box {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  right: 10px;
+  bottom: 10px;
+  box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+  border-radius: 15px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: 0.5s;
+}
+
+.card:hover .box {
+  transform: translateY(-50px);
+  box-shadow: 0 10px 40px rgba(0,0,0,0.2);
+}
+
+.content {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  overflow: hidden;
+}
+
+.text-overlay {
+  position: relative;
+  color: #fff;
+  z-index: 1;
+}
+
+.text-overlay h2 {
+  font-size: 8em;
+  color: rgba(0,0,0,0.05);
+  transition: 0.5s;
+  pointer-events: none;
+}
+
+.card:hover .text-overlay h2 {
+  color: rgba(0,0,0,0.05);
+}
+
+.text-overlay h3 {
+  font-size: 1.1em;
+  color: #f7df09;
+  transition: 0.5s;
+}
+
+.card:hover .text-overlay h3 {
+  color: #fff;
+}
+
+.rating {
+  position: absolute;
+  bottom: 5px;
+  left: 50%;
+  transform: translateX(-50%);
+  color: #ff5722; /* Adjust color to match your design */
+}

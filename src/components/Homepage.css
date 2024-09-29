@@ -1,0 +1,101 @@
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100..700;1,100..700&display=swap');
+
+* {
+    font-family: "Josefin Sans", system-ui;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Existing styles */
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    max-width: 1200px;
+    flex-wrap: nowrap;
+    margin: 30px auto; /* Center the container */
+}
+
+/* New styles for card-grid */
+
+.card-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); /* Default to 4 columns */
+    gap: 20px; /* Adjust the gap between cards as needed */
+    max-width: 1200px;
+    margin: 30px auto; /* Center the grid container */
+}
+
+.card {
+    position: relative;
+    width: 100%;
+    height: 300px; /* Adjust height as needed */
+    box-shadow: inset 5px 5px 5px rgba(0,0,0,0.05),
+                inset -5px -5px 5px rgba(255,255,255,0.5),
+                5px 5px 5px rgba(0,0,0,0.05),
+                -5px -5px 5px rgba(255,255,255,0.5);
+    border-radius: 15px;
+    overflow: hidden; /* Ensure the image and text don't overflow the card */
+}
+
+.card:hover .box {
+    transform: translateY(-50px);
+    box-shadow: 0 10px 40px rgba(0,0,0,0.2);
+}
+
+/* Responsive grid styles */
+
+@media (max-width: 1200px) {
+    .card-grid {
+        grid-template-columns: repeat(3, 1fr); /* 3 cards per row */
+    }
+}
+
+@media (max-width: 900px) {
+    .card-grid {
+        grid-template-columns: repeat(2, 1fr); /* 2 cards per row */
+    }
+}
+
+@media (max-width: 600px) {
+    .card-grid {
+        grid-template-columns: 1fr; /* 1 card per row */
+    }
+}
+
+/* Responsive container styles */
+
+@media (max-width: 900px) {
+    .container {
+        flex-direction: column; /* Stack items vertically on small screens */
+        align-items: stretch; /* Stretch items to fill the container width */
+    }
+}
+.glasscards-container {
+    margin: 30px 0;
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  
+  .glasscards-container .card {
+    flex: 1 1 calc(33.333% - 20px); /* Adjust for 3 cards per row */
+  }
+  
+  @media (max-width: 1200px) {
+    .glasscards-container .card {
+      flex: 1 1 calc(50% - 20px); /* Adjust for 2 cards per row */
+    }
+  }
+  
+  @media (max-width: 768px) {
+    .glasscards-container .card {
+      flex: 1 1 100%; /* Adjust for 1 card per row */
+    }
+  }
+  .overlay-heading{
+    text-align: center;
+  }
